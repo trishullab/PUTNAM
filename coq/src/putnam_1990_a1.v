@@ -8,6 +8,5 @@ Theorem putnam_1990_a1
         | S (S O) => 6
         | S (S (S n''' as n'') as n') => (n + 4) * a n' - 4 * n * a n'' + (4 * n - 8) * a n'''
     end)
-    : exists (b c: nat -> nat), forall (n: nat), A n = b n + c n <->
-    (b,c) = putnam_1990_a1_solution. 
+    : let (b,c) := putnam_1990_a1_solution in forall (n: nat), A n = b n + c n.
 Proof. Admitted.
