@@ -1,11 +1,17 @@
-Require Import Nat Factorial ZArith. From mathcomp Require Import fintype ssralg ssrnat ssrnum poly polydiv. 
-Open Scope ring_scope.
+Require Import Nat Factorial ZArith Reals Coquelicot.Coquelicot.
 Theorem putnam_2022_b1 
-    (R : numDomainType)
     (n : nat)
-    (a : nat -> Z)
-    (ha1 : Z.odd (a 1%nat) = true)
-    (p : {poly R} := \sum_(i < n) (if (0 <? (a i))%Z then ((Z.to_nat (a i))%:R *: 'X^i) else((Z.to_nat (a i))%:R *: -'X^i)) )
-    (b : {poly R} := \sum_(i < n) (iter n (comp_poly p) 1) / (fact n)%:R)
-    : forall (i: nat), b`_i <> 0.
+    (coeffP : nat -> R)
+    (coeffB : nat -> R)
+    (degP : nat)
+    (degB : nat)
+    (P : R -> R := fun x => sum_n (fun i : nat => Rmult (coeffP i) (x ^ i)) degP)
+    (B : R -> R := fun x => sum_n (fun i => Rmult (coeffB i) (x ^ i)) degB)
+    (npos : ge n 1)
+    (Pconst : coeffP 0%nat = R0)
+    (Pdeg : degP = n)
+    (Pint : forall k : nat, and (le 1 k) (le k n) -> coeffP k = IZR (floor (coeffP k)))
+    (Podd : Z.odd (floor (coeffP 1%nat)) = true)
+    (hB : forall x : R, exp (P x) = B x)
+    : forall k : nat, coeffB k <> R0.
 Proof. Admitted. 

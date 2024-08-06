@@ -1,3 +1,5 @@
+(* TODO: use NoDups (from coq stdlib) to check for duplicates *)
+
 Require Import List ZArith.
 Open Scope Z.
 Theorem putnam_2013_a6 

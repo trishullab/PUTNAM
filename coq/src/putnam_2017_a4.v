@@ -1,3 +1,5 @@
+(* TODO: make sure E is splitting the 2N students into two halves where presS is used to construct E*)
+
 Require Import Nat Ensembles List Finite_sets Reals Coquelicot.Coquelicot. From mathcomp Require Import div fintype seq ssrbool.
 Theorem putnam_2017_a4 
     (N : nat)

@@ -1,3 +1,5 @@
+(* TODO: check continuity requirement *)
+
 Require Import Reals. From Coquelicot Require Import Coquelicot Continuity RInt.
 Open Scope R_scope.
 Definition putnam_2012_a6_solution := True.

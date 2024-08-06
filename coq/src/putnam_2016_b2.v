@@ -1,3 +1,5 @@
+(* TODO: import List. *)
+
 Require Import Bool Reals Coquelicot.Lim_seq Coquelicot.Rbar. 
 Definition putnam_2016_b2_solution (a b : R) := a = 3/4 /\ b = 4/3.
 Theorem putnam_2016_b2

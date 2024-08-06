@@ -1,10 +1,10 @@
-Require Import ZArith Znumtheory. From mathcomp Require Import seq ssrnat ssrnum ssralg poly prime. 
-Open Scope ring_scope.
+Require Import ZArith Znumtheory Reals Coquelicot.Coquelicot.
 Definition putnam_2021_a6_solution := True.
 Theorem putnam_2021_a6
-    (R : numDomainType) 
-    (p : {poly R}) 
-    (a := forall i : nat, p`_i = 0 /\ p`_i = 1)
-    (ha : exists (q r: {poly R}), size p <> 0%nat /\ size q <> 0%nat -> p = q * r)
-    : exists q r, q <> 1 /\ r <> 1 /\ (horner p 2) = q * r <-> putnam_2021_a6_solution.
+    (coeffP : nat -> R)
+    (degP : nat)
+    (p : R -> R := fun x => sum_n (fun i : nat => Rmult (coeffP i) (x ^ i)) degP)
+    (a := forall i : nat, coeffP i = R0 \/ coeffP i = R1)
+    (ha : exists (q r: R -> R) (coeffQ coeffR : nat -> R) (degQ degR : nat), degP <> 0%nat /\ degQ <> 0%nat -> forall x, p x = Rmult (q x) (r x))
+    : exists q r, q <> 1 /\ r <> 1 /\ p 2 = q * r <-> putnam_2021_a6_solution.
 Proof. Admitted. 

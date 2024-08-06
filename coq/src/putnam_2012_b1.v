@@ -1,3 +1,5 @@
+(* TODO: missing positivity requirement, match Lean formalization *)
+
 (* Note: this formalization differs from the original statement by assigning a value of zero to all values outside the specified domain/range. The problem is still solvable given this modification. *)
 Require Import Reals RIneq.
 Open Scope R.

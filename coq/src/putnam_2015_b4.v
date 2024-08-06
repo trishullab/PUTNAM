@@ -1,3 +1,5 @@
+(* TODO: use a different sum function for infinite sum *)
+
 Require Import Nat List Reals Coquelicot.Coquelicot. From mathcomp Require Import div.
 Open Scope nat_scope.
 Definition putnam_2015_b4_solution := (17, 21). 

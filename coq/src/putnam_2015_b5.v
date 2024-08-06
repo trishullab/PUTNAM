@@ -1,3 +1,5 @@
+(* TODO: import List. cast goal expression to Z *)
+
 Require Import Reals. From mathcomp Require Import fintype perm ssrbool.
 Open Scope nat_scope.
 Definition putnam_2015_b5_solution := 4.
